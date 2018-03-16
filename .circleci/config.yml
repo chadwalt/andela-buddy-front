@@ -1,0 +1,38 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: install-packages
+          command: 'npm install'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: run-tests
+          command: 'npm test -- --coverage'
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+      - run:
+          name: Test Coverage Reporter
+          command: |
+            ./cc-test-reporter before-build
+            ./cc-test-reporter after-build -r $CODECLIMATE_REPO_TOKEN  --coverage-input-type lcov --exit-code $?
+    deployment:
+      production:
+        branch: master
+        heroku:
+          appname: andelabuddyproduction
+      staging:
+        branch: develop
+        heroku:
+          appname: andelabuddystaging
+
