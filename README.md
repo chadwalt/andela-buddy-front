@@ -7,20 +7,33 @@ Andela Buddy is an open source project that enables Andelans to connect with eac
 When a fellows create accounts, they get to add their interests to their profiles, through this the other fellows that share the interests are listed and then they can connect with them. A fellow can also create events, this way the fellows get to know eachother.
 
 #### Technologies Used
-- React/Redux
+- React
+- Redux
 
-#### installation
-Make sure you have npm or yarn installed.
+#### Getting Started
+The instructions below are to install the project on to the local machine.
 
-Clone the repo
-`git clone https://github.com/chadwalt/andela-buddy-front.git`
+1. Clone the repo
+  ```
+  git clone https://github.com/chadwalt/andela-buddy-front.git
+  ```
 
-To run the application run
+2. Install the dependences.
+```
+yarn install or npm install
+```
 
-```yarn install` or `npm install```
+3. Run the application
+```
+yarn start or npm start
+```
 
-To start running the application run the command
-```yarn start` or `npm start```
-
-To run tests
-`npm test -- --coverage`
+#### Testing
+1. Run tests
+```
+npm test
+```
+2. Run Tests with coverage.
+```
+npm test -- --coverage
+```
