@@ -1,0 +1,75 @@
+@import '../../assets/scss/fonts';
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    padding: 0px, 0px, 0px, 0px;
+    background-image: url('../../assets/images/login_page_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.wrapper {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.login-wrapper {
+    position: absolute;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    top: 45%;
+    left: 50%;
+    .tag-line {
+        font-family: $font-family-2;
+        font-size: 45px;
+        font-weight: 300;
+        text-align: center;
+        color: #ffffff;
+        line-height: 50 em;
+        margin-top: 10%;
+    }
+}
+
+.logo-and-title {
+    position: absolute;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    .app-name{
+        width: 18 em;
+        height: 41px;
+        font-family: $font-family-2;
+        font-size: 32px;
+        font-weight: 500;
+        color: #ffffff;
+        float: right;
+        margin-top: 10px;
+    }
+}
+
+.sign-in-button {
+    width: 340px;
+    height: 60px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    margin-top: 8%;
+  
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+.sign-in-error-msg{
+    width: 100%;
+    margin-top: -2em;
+    text-align: center;
+    padding: 2em;
+    font-size: 0.8em;
+    text-align: center;
+    color: #fefefe;
+    font-family: $font-family-2;
+}
